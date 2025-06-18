@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, Bestie! 🎉💖</title>
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: auto;
+      min-height: 100vh;
+      position: relative;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Container */
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      max-width: 500px;
+      margin: 40px auto;
+      border-radius: 25px;
+      padding: 30px 20px 50px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 10;
+    }
+
+    
+
+    /* Headings */
+    h1 {
+      font-size: 2.8em;
+      color: #ff4d6d;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px #ffa1a1;
+    }
+    h2 {
+      font-weight: 400;
+      color: #ff8c42;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    /* Message */
+    p {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      color: #555;
+      margin-bottom: 30px;
+      padding: 0 10px;
+    }
+
+    /* Footer */
+    .footer {
+      font-style: italic;
+      color: #999;
+      font-size: 1em;
+    }
+
+    /* Audio controls */
+    audio {
+      outline: none;
+      margin-bottom: 15px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Floating hearts and balloons container */
+    .floating-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: visible;
+      z-index: 5;
+    }
+
+    /* Heart & balloon styles */
+    .heart, .balloon {
+      position: absolute;
+      bottom: -60px;
+      opacity: 0.8;
+      animation-timing-function: linear;
+      user-select: none;
+    }
+
+    /* Heart shape */
+    .heart {
+      width: 30px;
+      height: 30px;
+      background-color: #ff4d6d;
+      transform: rotate(-45deg);
+      animation-name: floatUp;
+      animation-iteration-count: infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #ff4d6d;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -15px;
+      left: 0;
+    }
+    .heart::after {
+      left: 15px;
+      top: 0;
+    }
+
+    /* Balloon shape */
+    .balloon {
+      width: 40px;
+      height: 55px;
+      background: radial-gradient(circle at 20% 30%, #ff8c42, #d94e00);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation-name: floatUpSlow;
+      animation-iteration-count: infinite;
+    }
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      width: 2px;
+      height: 15px;
+      background: #d94e00;
+      transform: translateX(-50%);
+      border-radius: 1px;
+    }
+
+    /* Animations */
+    @keyframes floatUp {
+      0% {
+        bottom: -60px;
+        opacity: 0.8;
+        transform: translateX(0) rotate(-45deg);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 110vh;
+        opacity: 0;
+        transform: translateX(30px) rotate(-45deg);
+      }
+    }
+
+    @keyframes floatUpSlow {
+      0% {
+        bottom: -60px;
+        opacity: 0.8;
+        transform: translateX(0);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 110vh;
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+    }
+
+    /* Responsive text */
+    @media (max-width: 480px) {
+      .container {
+        max-width: 90%;
+        padding: 25px 15px 40px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
+      p {
+        font-size: 1em;
+      }
+      
+      audio {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" role="main" aria-label="Birthday wishes for best friend">
+
+    <h1>Happy Birthday, BHAKTI! 🎉💖</h1>
+    <h2>To my wonderful bestie</h2>
+    <per>
+      You brighten every day with your smile and kindness.<br />
+      Wishing you endless joy, love, and unforgettable memories.<br />
+      Thank you for being the amazing friend you are!<br />
+      Love you forever and always! 💕🎂
+    </per>
+
+    <audio autoplay loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="footer">— With all my love, CHETAN</div>
+  </div>
+
+  <div class="floating-container" aria-hidden="true">
+    <!-- Hearts -->
+    <div class="heart" style="left: 10%; animation-duration: 8s; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 25%; animation-duration: 10s; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 40%; animation-duration: 9s; animation-delay: 4s;"></div>
+    <div class="heart" style="left: 60%; animation-duration: 11s; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 75%; animation-duration: 8.5s; animation-delay: 3s;"></div>
+
+    <!-- Balloons -->
+    <div class="balloon" style
